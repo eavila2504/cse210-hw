@@ -23,6 +23,19 @@ public class Comment
         return $"Comment by {_commentName}: \"{_commentText}\"";
     }
 
+    public string CommentText
+    {
+        get { return _commentText;}
+        set { _commentText = value;}
+    }
+    
+    public string CommentName
+    {
+        get {return _commentName; }
+        set {_commentName = value; }
+    }
+
+
 }
 
 
