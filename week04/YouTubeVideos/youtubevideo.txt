@@ -1,0 +1,15 @@
+┌──────────────────────────────┐      ┌──────────────────────────────┐
+│           Video              │      │          Comment             │
+├──────────────────────────────┤      ├──────────────────────────────┤
+│ - _title: string             │      │ - _commentText: string       │
+│ - _author: string            │      │ - _commentName: string       │
+│ - _length: int               │      ├──────────────────────────────┤
+│ - _comments: List<Comment>   │      │ + Comment()                  │
+├──────────────────────────────┤      │ + Comment(string,string)     │
+│ + Video()                    │      │ + displayComment(): string   │
+│ + Video(string,string,int)   │      │ + CommentText: string        │
+│ + displayVideo(): string     │      │ + CommentName: string        │
+│ + GetNumberOfComments(): int │      └──────────────────────────────┘
+│ + AddComment(Comment)        │
+│ + DisplayAll(): void         │
+└──────────────────────────────┘

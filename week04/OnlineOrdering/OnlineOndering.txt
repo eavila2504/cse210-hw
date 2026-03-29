@@ -1,0 +1,23 @@
+┌─────────────────────────┐  ┌─────────────────────────┐  ┌─────────────────────────┐  ┌─────────────────────────┐
+│        Product          │  │         Order           │  │        Customer         │  │        Address          │
+├─────────────────────────┤  ├─────────────────────────┤  ├─────────────────────────┤  ├─────────────────────────┤
+│ - _productName: string  │  │ - _products: List<Product>│ │ - _customerName: string│  │ - _street: string       │
+│ - _productID: string    │  │ - _customer: Customer   │  │ - _address: Address     │  │ - _city: string         │
+│ - _price: double        │  │ - US_SHIPPING: double   │  ├─────────────────────────┤  │ - _state: string        │
+│ - _quantity: int        │  │ - INT_SHIPPING: double  │  │ + Customer()            │  │ - _country: string      │
+│ - _productTotal: double │  ├─────────────────────────┤  │ + Customer(str,Address) │  ├─────────────────────────┤
+├─────────────────────────┤  │ + Order()               │  │ + LivesInUSA(): bool    │  │ + Address()             │
+│ + Product()             │  │ + Order(Customer)       │  │ + GetCustomerName(): str│  │ + Address(str,str,str,  │
+│ + Product(string,string,│  │ + AddProduct(Product)   │  │ + GetAddress(): Address │  │   str)                  │
+│   double,int)           │  │ + GetTotalCost(): double│  │ + SetCustomerName(str)  │  │ + IsInUSA(): bool       │
+│ + GetProductName(): str │  │ + GetPackingLabel(): str│  │ + SetAddress(Address)   │  │ + GetFullAddress(): str │
+│ + GetProductID(): str   │  │ + GetShippingLabel(): str│ └─────────────────────────┘  │ + GetStreet(): str      │
+│ + GetPrice(): double    │  │ + GetCustomerName(): str│                               │ + GetCity(): str        │
+│ + GetQuantity(): int    │  │ + GetProducts(): List   │                               │ + GetState(): str       │
+│ + GetProductTotal(): dbl│  │ + SetProducts(List)     │                               │ + GetCountry(): str     │
+│ + SetProductName(str)   │  │ + GetCustomer(): Cus    │                               │ + SetStreet(str)        │
+│ + SetProductID(str)     │  │ + SetCustomer(Customer) │                               │ + SetCity(str)          │
+│ + SetPrice(double)      │  │ - GetShippingCost(): dbl│                               │ + SetState(str)         │
+│ + SetQuantity(int)      │  └─────────────────────────┘                               │ + SetCountry(str)       │
+│ - CalculateProductTotal()│                                                           └─────────────────────────┘
+└─────────────────────────┘
