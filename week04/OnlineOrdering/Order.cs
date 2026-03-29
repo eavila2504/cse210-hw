@@ -58,14 +58,15 @@ public class Order
         StringBuilder shippingLabel = new StringBuilder();
         shippingLabel.AppendLine("SHIPPING LABEL");
         shippingLabel.AppendLine("--------------");
-        shippingLabel.AppendLine($"Customer: {_customer.GetCustomer()}");
+        shippingLabel.AppendLine($"Customer: {_customer.GetCustomerName()}");
         shippingLabel.AppendLine("ADDRESS:");
         shippingLabel.AppendLine(_customer.GetAddress().ToString());
         return shippingLabel.ToString();
     }
 
-    public string GetCustomerName()
-    {
-        
-    }
+    public List<Product> GetProducts(){return _products; }
+    public void SetProducts(List<Product>products) { _products = products; }
+    public Customer GetCustomerObject() { return _customer; }
+
+    public void SetCustomer(Customer customer) { _customer = customer; }
 }

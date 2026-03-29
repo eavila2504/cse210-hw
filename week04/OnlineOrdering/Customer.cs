@@ -22,7 +22,7 @@ public class Customer
         return _address.isInUSA();
     }
 
-    public string GetCustomer()
+    public string GetCustomerName()
     {
         return _customerName;
     }
