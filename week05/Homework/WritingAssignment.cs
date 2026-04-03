@@ -1,4 +1,4 @@
-using System;
+
 
 public class WritingAssignment : Assignment
 {
@@ -9,5 +9,10 @@ public class WritingAssignment : Assignment
         _title = title;
     }
     
-       
+    public string GetWritingInformation()
+    {
+        string studentName = GetStudentName();
+
+        return $"{studentName} - {_title}";
+    }   
 }
