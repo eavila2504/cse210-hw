@@ -41,7 +41,6 @@ public class ReflectingActivity : Activity
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.WriteLine("You may begin in: ");
         ShowCountdown(5);
-        Console.Clear();
         DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
 
         while(DateTime.Now < endTime)

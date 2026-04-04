@@ -28,14 +28,13 @@ public class Activity
 
     public void StartingMessage()
     {   
-        Console.Clear();
+       
         Console.WriteLine($"Starting {_name}");
         Console.WriteLine(_description);
         Console.WriteLine();
         Console.WriteLine($"How Many Seconds Would You Like For Your Session?");
         _duration = int.Parse(Console.ReadLine());
 
-        Console.Clear();
         Console.WriteLine("Get Ready to begin...");
         ShowSpinner(3);
     }
@@ -48,7 +47,7 @@ public class Activity
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         ShowSpinner(3);
-        Console.Clear();
+        
 
         
     }
