@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 public class BreathingActivity : Activity
 {
    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax and focus on your breathing." , 0)

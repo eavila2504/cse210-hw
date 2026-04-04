@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 public class ListingActivity : Activity
 {
   private int _count;
@@ -10,11 +14,48 @@ public class ListingActivity : Activity
     "Who are some of your personal heroes?"
   };
 
-  public ListingActivity()
+  public ListingActivity() : base("Listing Activity", "This activity will help you reflect on the good thing in your life by having you list as many things as you can in a certain area.", 0)
+  {
+    
+  }
+
+  public void Run()
+  {
+    StartingMessage();
+    Console.WriteLine("\n List as many responses as you can to the following prompt: ");
+    Console.WriteLine($"---{GetRandomPrompt()}---");
+    Console.WriteLine("\nYou may Begin in: ");
+    ShowCountdown(5);
+    Console.WriteLine();
+
+    DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
+    List<string> userList = GetListFromUser(endTime);
+    Console.WriteLine($"\nYou listed {userList.Count} items!");
+
+    EndingMessage();
+
+  }
+  
+  private string GetRandomPrompt()
+  {
+    Random random = new Random();
+    return _prompts[random.Next(_prompts.Count)];
+  }
+
+  private List<string> GetListFromUser(DateTime endTime)
+  {
+    List<string> responses = new List<string>();
+
+    while (DateTime.Now < endTime)
     {
-        _name = "Listing Activity";
-        _descrption = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
-        _duration = 50;
+        Console.Write("> ");
+        string response = Console.ReadLine();
+        if (!string.IsNullOrEmpty(response))
+        {
+            responses.Add(response);
+        }
     }
 
+    return responses;
+  }
 }

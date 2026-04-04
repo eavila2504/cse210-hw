@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 
 public class ReflectingActivity : Activity
 {
@@ -23,35 +25,54 @@ public class ReflectingActivity : Activity
         "How can you keep this experience in mind in the future?"
     };
 
-    public ReflectingActivity()
+    public ReflectingActivity() : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0)
     {
-        _name = "Reflecting Activity";
-        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-        _duration = 50;
+        
     }
 
     public void Run()
-    {
+    {   
+        StartingMessage();
+
+        Console.WriteLine("\n Consider the following prompt: ");
+        DisplayPrompt();
+        Console.WriteLine("\n When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        Console.WriteLine("You may begin in: ");
+        ShowCountdown(5);
+        Console.Clear();
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
+
+        while(DateTime.Now < endTime)
+        {
+            DisplayQuestion();
+            Console.WriteLine("\n");
+            ShowSpinner(8);
+        }
+        EndingMessage();
         
     }
 
     private string GetRandomPrompt()
     {
-        
-    }
-
-    private string GetRandomQuestion()
-    {
-        
+        Random random = new Random();
+        return _prompts[random.Next(_prompts.Count)];        
     }
 
     private void DisplayPrompt()
     {
-        
+      Console.WriteLine($"---{GetRandomPrompt()}---");   
     }
+    private string GetRandomQuestion()
+    {
+        Random random = new Random();
+        return _questions[random.Next(_questions.Count)];
+    }
+
 
     private void DisplayQuestion()
     {
-        
+        Console.WriteLine($"---{GetRandomQuestion()}---");
     }
 }   
