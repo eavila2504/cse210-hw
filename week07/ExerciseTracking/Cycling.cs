@@ -10,9 +10,23 @@ public class Cycling : Activity
 
     }
 
+    public Cycling(int minutes, double speed) : base(minutes)
+    {
+        _speed = speed;
+    }
+
     public override double GetDistance()
     {
         return (GetDuration() / 60.0) * _speed;
         
+    }
+    public override double GetSpeed()
+    {
+        return _speed;
+    }
+
+    public override double GetPace()
+    {
+        return  GetDuration() / GetDistance();  
     }
 } 

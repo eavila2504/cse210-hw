@@ -7,6 +7,11 @@ public class Running : Activity
         _distance = distance;
 
     }
+    
+    public Running(int minutes, double distance) : base(minutes)
+    {
+        _distance = distance;
+    }
 
     public override double GetDistance()
     {

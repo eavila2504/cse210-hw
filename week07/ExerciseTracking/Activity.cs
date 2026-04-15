@@ -12,6 +12,12 @@ public class Activity
         _duration = minutes;
     }
 
+    public Activity (int minutes)
+    {
+        _date = DateTime.Now.ToString("dd/MM/yy");
+        _duration = minutes;
+    }
+
     public string GetDate()
     {
         return _date;
@@ -24,17 +30,17 @@ public class Activity
 
     public virtual double GetDistance()
     {
-        return 0.0;
+        return 0;
     }
 
     public virtual double GetSpeed()
     {
-        return 0.0;
+        return 0;
     }
 
     public virtual double GetPace()
     {
-        return 0.0;
+        return 0;
     }
      
     public virtual string GetSummary()
